@@ -2,9 +2,9 @@
 sometimes you need to install aria2 and get it working with nginx without doing anything but running a single script...
 
 ### Relevant links and documentation
-web wrapper: https://github.com/ziahamza/webui-aria2
-documentation: https://aria2.github.io/manual/en/html/index.html
-python3 module for aria2 https://github.com/kevinxhuang/pyaria2
+web wrapper: https://github.com/ziahamza/webui-aria2   
+documentation: https://aria2.github.io/manual/en/html/index.html   
+python3 module for aria2 https://github.com/kevinxhuang/pyaria2   
 
 ## What this does
 
