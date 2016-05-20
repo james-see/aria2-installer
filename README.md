@@ -5,7 +5,7 @@ sometimes you need to install aria2 and get it working with nginx without doing 
 
 It installs aria2 on OSX or Linux and installs nginx and dependencies as necessary.
 
-## How to do this successfully (TL;DR; version)
+## How to do this successfully (TL;DR version)
 
 1. Make the script executable: run `chmod + x aria_install.sh` 
 2. Run the script: run `sudo ./aria_install.sh` (needs sudo to mod /etc/hosts file for aria.local alias)
