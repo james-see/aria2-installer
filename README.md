@@ -1,9 +1,14 @@
-# aria2-installer
+# aria2 installer
 sometimes you need to install aria2 and get it working with nginx without doing anything but running a single script...
+
+### Relevant links and documentation
+web wrapper: https://github.com/ziahamza/webui-aria2
+documentation: https://aria2.github.io/manual/en/html/index.html
+python3 module for aria2 https://github.com/kevinxhuang/pyaria2
 
 ## What this does
 
-It installs aria2 on OSX or Linux and installs nginx and dependencies as necessary.
+It installs aria2 on OSX or Linux and installs NGINX and dependencies as necessary.
 
 ## How to do this successfully (TL;DR version)
 
@@ -15,4 +20,4 @@ It installs aria2 on OSX or Linux and installs nginx and dependencies as necessa
 
 ## How to update?
 
-1. Run the script again, it will automatically do a git pull on aria2-web and restart the aria2 rpc server.
+1. Run the script again, it will automatically do a git pull on [webui-aria2](https://github.com/ziahamza/webui-aria2) and restart the aria2 rpc server.
