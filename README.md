@@ -17,7 +17,8 @@ It installs aria2 on OSX or Linux and installs NGINX and dependencies as necessa
 3. Copy the NGINX vhost file to sites-available: `sudo cp aria.local [path-to-your-nginx-sites-available-folder]`
 4. Symlink to sites-enabled: (osx homebrew path example) `sudo ln -s /usr/local/etc/nginx/sites-available/aria.local /usr/local/etc/nginx/sites-enabled/`
 5. restart nginx `sudo nginx -s reload`
-
+6. run `aria2c --enable-rpc --rpc-listen-all --rpc-secret helloworldhelloworldhelloworld`
+7. open up a browser window at http://aria.local and in the settings make sure to input 127.0.0.1 and port 6800 as connection info.
 ## How to update?
 
 1. Run the script again, it will automatically do a git pull on [webui-aria2](https://github.com/ziahamza/webui-aria2) and restart the aria2 rpc server.
