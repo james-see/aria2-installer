@@ -67,7 +67,7 @@ fi
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Do something under GNU/Linux platform
     # install aria2 via apt-get
-    sudo apt-get install aria2 python3-pip -y
+    sudo apt-get install aria2 python3-pip supervisor -y
     if which nginx 2> /dev/null; then
         $nginxlocation=`which nginx`
         echo "must be added to a new file in $nginxlocation/sites-available as aria.local and then sudo ln -s to $nginxlocation/sites-enabled"
@@ -87,9 +87,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
         cd /home/jamesc/projects
         git clone https://github.com/ziahamza/webui-aria2.git ariaweb
         sudo echo "127.0.0.1 aria.local" >> /etc/hosts
-        echo "installed pyaria2 and cloned in ariaweb, setup nginx vhost and should be gtg"
+        echo "installed pyaria2 and cloned in ariaweb, setup nginx vhost root path and should be gtg"
     fi
-    # sudo echo "127.0.0.1 aria.local" >> /etc/hosts
     else
         sudo apt-get install nginx nginx-extras -y
         echo "installed nginx, please run script again..."
