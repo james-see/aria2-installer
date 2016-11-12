@@ -87,6 +87,10 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
         cd /home/jamesc/projects
         git clone https://github.com/ziahamza/webui-aria2.git ariaweb
         sudo echo "127.0.0.1 aria.local" >> /etc/hosts
+        echo "getting aria2server.sh setup to execute aria2 server as service using supervisor"
+        cd /home/jamesc/projects/aria2-installer/
+        sudo chmod a+x aria2server.sh 
+        sudo ln -s /home/jamesc/projects/aria2-installer/aria2server.sh /usr/local/bin/ # get aria2server to bin folder for supervisor
         echo "installed pyaria2 and cloned in ariaweb, setup nginx vhost root path and should be gtg"
     fi
     else
