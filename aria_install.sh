@@ -67,28 +67,29 @@ fi
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Do something under GNU/Linux platform
     # install aria2 via apt-get
-    sudo apt-get install aria2 -y
+    sudo apt-get install aria2 python3-pip -y
     if which nginx 2> /dev/null; then
         $nginxlocation=`which nginx`
         echo "must be added to a new file in $nginxlocation/sites-available as aria.local and then sudo ln -s to $nginxlocation/sites-enabled"
         echo "a default nginx vhost file is included commented out in the bottom of this script file"
-    ariadirectory=`~/projects/ariaweb/`
-    if cd ~/projects/ariaweb 2> /dev/null; then
-        cd ~/projects/ariaweb
+    #ariadirectory=`/home/jamesc/projects/ariaweb/`
+    if cd /home/jamesc/projects/ariaweb 2> /dev/null; then
+        cd /home/jamesc/projects/ariaweb
         echo "since you already have it installed, just updating the repo charles."
         git pull
         secrets="helloworldhelloworldhelloworld"
         echo "now starting up the server with password $secrets..."
-        echo "location will be http://aria.local in browser or 127.0.0.1:6800 if you suck at nginx"        aria2c --enable-rpc --rpc-listen-all --rpc-secret helloworldhelloworldhelloworld
+        echo "location will be http://aria.local in browser or 127.0.0.1:6800 if you suck at nginx"
+        sudo aria2c --enable-rpc --rpc-listen-all --rpc-secret helloworldhelloworldhelloworld
         exit 0
     else
-        pip3 install pyaria2 # might need sudo depending on permissions and also might need pip vs pip3 -jc
-        mkdir ~/projects && cd ~/projects
+        sudo pip3 install pyaria2 argparse # might need sudo depending on permissions and also might need pip vs pip3 -jc
+        cd /home/jamesc/projects
         git clone https://github.com/ziahamza/webui-aria2.git ariaweb
         sudo echo "127.0.0.1 aria.local" >> /etc/hosts
         echo "installed pyaria2 and cloned in ariaweb, setup nginx vhost and should be gtg"
     fi
-    sudo echo "127.0.0.1 aria.local" >> /etc/hosts
+    # sudo echo "127.0.0.1 aria.local" >> /etc/hosts
     else
         sudo apt-get install nginx nginx-extras -y
         echo "installed nginx, please run script again..."
